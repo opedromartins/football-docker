@@ -6,8 +6,16 @@ This Dockerfile provides a containerized environment for running examples and tr
 
 ### Building the Docker Image
 
+#### CPU Version
+
 ```bash
-docker build -t gfootball_python37 .
+docker build -t gfootball_python37_cpu -f CPU/Dockerfile .
+```
+
+#### GPU Version
+
+```bash
+docker build -t gfootball_python37_gpu -f GPU/Dockerfile .
 ```
 
 ### Running the Docker Container
@@ -23,7 +31,7 @@ docker build -t gfootball_python37 .
 Example:
 
 ```bash
-./run.sh gfootball_python37 --rm --nvidia
+./run.sh gfootball_python37_gpu --rm --nvidia
 ```
 
 ### Activating the Conda Environment
