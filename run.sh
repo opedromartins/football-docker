@@ -90,6 +90,7 @@ docker run -it \
   -e XAUTHORITY=$XAUTH \
   -v "$XAUTH:$XAUTH" \
   -v "/tmp/.X11-unix:/tmp/.X11-unix" \
+  --shm-size=2.31gb \
   $DOCKER_OPTS \
   $IMG
 

@@ -34,12 +34,6 @@ Example:
 ./run.sh gfootball_python37_gpu --rm --nvidia
 ```
 
-### Activating the Conda Environment
-
-```bash
-conda activate gfootball
-```
-
 ### Examples with Baselines
 
 To run examples with Baselines, use the following command within the container:

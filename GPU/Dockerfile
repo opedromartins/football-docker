@@ -46,4 +46,11 @@ RUN . /root/.bashrc && \
     conda activate gfootball && \
     pip install "ray[tune]==1.9.2" "ray[rllib]==1.9.2" gym==0.15.3
 
+# Due to a bug in the gfootball package, we need to modify the run_multiagent_rllib.py file
+RUN rm -rf /root/miniconda3/envs/gfootball/lib/python3.7/site-packages/gfootball/examples/run_multiagent_rllib.py
+# Copy the modified run_multiagent_rllib.py file to the gfootball package
+COPY ../Files/run_multiagent_rllib.py /root/miniconda3/envs/gfootball/lib/python3.7/site-packages/gfootball/examples/run_multiagent_rllib.py
+
+RUN echo 'conda activate gfootball' >> ~/.bashrc
+
 ENTRYPOINT ["/bin/bash"]
